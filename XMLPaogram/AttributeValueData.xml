@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--用户资料映射-->
+<ApplyInfoMap>
+  <!--Appkey对应App使用的Key，ApiKey对应Api使用的key，ApiClass对应Api的实体类名  -->
+  <!--<x y=""></x>其中x为XmlElement  y为XmlAttribute-->
+  <!--<x><y></y></x>其中x为XmlElement  y也为XmlElement-->
+  <!--<add>
+    <AppKey>
+      UserName
+    </AppKey>
+    <ApiKey>
+      UserName
+    </ApiKey>
+    <Des>
+      姓名
+    </Des>
+    <ApiClass>
+      ""
+    </ApiClass>
+  </add>-->
+  <add AppKey="UserName" ApiKey="UserName" Des="姓名" ApiClass=""/>
+  <add AppKey="CellPhoneNumber" ApiKey="CellphoneNumber" Des="联系电话" ApiClass=""/>
+  <add AppKey="Gender" ApiKey="Gender" Des="性别" ApiClass=""/>
+  <add AppKey="LoanAmount" ApiKey="LoanAmount" Des="贷款金额" ApiClass=""/>
+  <add AppKey="CreditPeriod" ApiKey="CreditPerod" Des="贷款期限" ApiClass=""/>
+  <add AppKey="PAYMENT_DATE" ApiKey="PAYMENT_DATE" Des="用款时间" ApiClass=""/>
+  <add AppKey="RQR_PURPOSE" ApiKey="RQR_PURPOSE" Des="贷款用途" ApiClass=""/>
+  <add AppKey="RQR_RTRN_SOURCE" ApiKey="RQR_RTRN_SOURCE" Des="还款来源" ApiClass=""/>
+  <add AppKey="RqrReturnWays" ApiKey="RqrReturnWays" Des="还款方式" ApiClass=""/>
+
+  <!-- 其他资产-->
+  <add AppKey="OtherAssets" ApiKey="OtherAssets" Des="其他资产名称" ApiClass="" ApiList="req_ApplyInfo_OtherAsset" RealClass="ReqApplyInfoOtherAsset" />
+  <add AppKey="OtherAssetsYears" ApiKey="OtherAssetsYears" Des="持有年限" ApiClass="" ApiList="req_ApplyInfo_OtherAsset"/>
+  <add AppKey="OtherAssetsMemo" ApiKey="OtherAssetsMemo" Des="资产详情" ApiClass="" ApiList="req_ApplyInfo_OtherAsset"/>
+  <add AppKey="AssetsMarketPrice" ApiKey="AssetsMarketPrice" Des="市场价值" ApiClass="" ApiList="req_ApplyInfo_OtherAsset"/>
+
+  <!--车产信息-->
+  <add AppKey="HaveCar" ApiKey="HaveCar" Des="名下车产情况" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarRegion" ApiKey="CarRegion" Des="牌照归属地" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarMortgage" ApiKey="CarMortgage" Des="车辆抵押" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarAssessmentAmount" ApiKey="CarAssessmentAmount" Des="车产估值" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarAgeYear" ApiKey="CarAgeYear" Des="车龄" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarMileage" ApiKey="CarMileage" Des="行驶里程" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarBrand" ApiKey="CarBrand" Des="汽车品牌" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarBrandNum" ApiKey="CarBrandNum" Des="车牌号" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarBuyAmount" ApiKey="CarBuyAmount" Des="购买价格" ApiClass="req_ApplyInfo_Car"/>
+  <add AppKey="CarLoanBalance" ApiKey="CarLoanBalance" Des="贷款余额" ApiClass="req_ApplyInfo_Car"/>
+
+  <!--企业信息-->
+  <add AppKey="CompanyPost" ApiKey="CompanyPost" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CompanyLocation" ApiKey="CompanyLocation" Des="企业经营地" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="BusinessYear" ApiKey="BusinessYear" Des="经营年限" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="RegisteredCapital" ApiKey="RegisteredCapital" Des="注册资金" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="AnnualRevenue" ApiKey="AnnualRevenue" Des="年营业收入" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CompanyIndustryType" ApiKey="CompanyIndustryType" Des="所属行业" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="PublicWater" ApiKey="PublicWater" Des="月对公流水" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="PrivateWater" ApiKey="PrivateWater" Des="月对私流水" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CompanyOpenTicket" ApiKey="CompanyOpenTicket" Des="年开票额" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CompanyDebtStatus" ApiKey="CompanyDebtStatus" Des="企业欠款情况" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CompanyDebtAmount" ApiKey="CompanyDebtAmount" Des="欠款余额" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CMP_NAME" ApiKey="CMP_NAME" Des="企业名称" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CMP_ADDR" ApiKey="CMP_ADDR" Des="企业地址" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CMP_SCALE" ApiKey="CMP_SCALE" Des="企业规模" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CMP_SIGN_AMOUNT" ApiKey="CMP_SIGN_AMOUNT" Des="年营业额" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="MainBusiness" ApiKey="MainBusiness" Des="主营业务" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="CMP_SALES_AMOUNT" ApiKey="CMP_SALES_AMOUNT" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="LiabilitiesAmount" ApiKey="LiabilitiesAmount" Des="资产负债率" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="LastYearProfit" ApiKey="LastYearProfit" Des="年净利润" ApiClass="req_ApplyInfo_Company"/>
+  <add AppKey="ReqApplyInfoCompanyLoans" ApiKey="req_ApplyInfo_CompanyLoan" ApiClass=""/>
+  <!--企业欠款信息-->
+  <add AppKey="CompanylLoanUnit" ApiKey="CompanylLoanUnit" Des="欠款机构名称" ApiClass="req_ApplyInfo_Company" ApiList="req_ApplyInfo_CompanyLoan"/>
+  <add AppKey="CompanyLoanRepayment" ApiKey="CompanyLoanRepayment" Des="月还款额" ApiClass="req_ApplyInfo_Company" ApiList="req_ApplyInfo_CompanyLoan"/>
+
+  <!--个人信用信息-->
+  <add AppKey="CreditStanding" ApiKey="CreditStanding" Des="信用情况" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="OverdueType" ApiKey="OverdueType" Des="逾期情况" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="CreditCardAmount" ApiKey="CreditCardAmount" Des="信用卡总额度" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="UsedCreditCardAmount" ApiKey="UsedCreditCardAmount" Des="已使用额度" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="LoanStatus" ApiKey="LoanStatus" Des="欠款情况" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="MonthlyRepayment" ApiKey="MonthlyRepayment" Des="月均还款额" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="MASTER_SPOUSE_CREDIT" ApiKey="MASTER_SPOUSE_CREDIT" Des="配偶信用情况" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="SpouseOverdueStatus" ApiKey="SpouseOverdueStatus" Des="配偶逾期情况" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="CreditCardsCount" ApiKey="CreditCardsCount" Des="信用卡张数"  ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="CardBank" ApiKey="CardBank" Des="发卡银行" ApiClass="req_ApplyInfo_Credit"/>
+  <add AppKey="ReqApplyInfoCreditLoans" ApiKey="req_ApplyInfo_CreditLoan" ApiClass=""/>
+  <!--个人欠款信息-->
+  <add AppKey="PersonalLoanUnit" ApiKey="PersonalLoanUnit" Des="欠款机构名称" ApiClass="req_ApplyInfo_Credit" ApiList="req_ApplyInfo_CreditLoan"/>
+  <add AppKey="PersonalLoanBalance" ApiKey="PersonalLoanBalance" Des="欠款余额" ApiClass="req_ApplyInfo_Credit" ApiList="req_ApplyInfo_CreditLoan"/>
+
+  <!--房产信息-->
+  <add AppKey="HouseType" ApiKey="HouseType" Des="房产信息" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseRegion" ApiKey="HouseRegion" Des="房产地段" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseMortgage" ApiKey="HouseMortgage" Des="房产抵押" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseMonthlyPaymentsBankAmount" ApiKey="HouseMonthlyPaymentsBankAmount" Des="月还款额" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="LoanPaidMonth" ApiKey="LoanPaidMonth" Des="已还款月数" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseArea" ApiKey="HouseArea" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseValuation" ApiKey="HouseValuation" Des="房产估值" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseAddr" ApiKey="HouseAddr" Des="房产地址" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HasSpareHouse" ApiKey="HasSpareHouse" Des="备用房" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseBuyAmount" ApiKey="HouseBuyAmount" Des="购买总价" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseAssessmentAmount" ApiKey="HouseAssessmentAmount" Des="房产现价" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseLoanBalance" ApiKey="HouseLoanBalance" Des="贷款余额" ApiClass="req_ApplyInfo_House"/>
+  <add AppKey="HouseDiscount" ApiKey="HouseDiscount" Des="折后空间" ApiClass="req_ApplyInfo_House"/>
+
+  <!--个人信息-->
+  <add AppKey="Identity" ApiKey="Identity" Des="身份" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="Share" ApiKey="Share" Des="法人或股东" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="Age" ApiKey="Age" Des="年龄" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="CensusRegisterSeatProvince" ApiKey="CensusRegisterSeatProvince" Des="户籍" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="CensusRegisterSeatCity" ApiKey="CensusRegisterSeatCity" Des="户籍市" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="WorkingProvince" ApiKey="WorkingProvince" Des="工作地" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="WorkingCity" ApiKey="WorkingCity" Des="工作地" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="LNK_IDCARD" ApiKey="LNK_IDCARD" Des="身份证" ApiClass="req_ApplyInfo_Identity"/>
+  <add AppKey="LNK_ADDR" ApiKey="LNK_ADDR" Des="户籍详细地址" ApiClass="req_ApplyInfo_Identity"/>
+
+  <!--工作信息-->
+  <add AppKey="IsMarried" ApiKey="IsMarried" Des="婚姻状况" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="CanSpouseGuarantee" ApiKey="CanSpouseGuarantee" Des="配偶能否出面担保" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="CompanyType" ApiKey="CompanyType" Des="就职公司类型" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="WorkingAge" ApiKey="WorkingAge" Des="现单位工龄" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="Position" ApiKey="Position" Des="职位" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="IncomeDistributionType" ApiKey="IncomeDistributionType" Des="收入发放方式" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="AverageMonthlyIncome" ApiKey="AverageMonthlyIncome" Des="月均总收入" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="CanProvideEarningsInformation" ApiKey="CanProvideEarningsInformation" Des="能否提供收入证明" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="SocialSecurityFund" ApiKey="SocialSecurityFund" Des="社保和公积金" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="SocialSecurityFundMonth" ApiKey="SocialSecurityFundMonth" Des="社保连续缴纳年限" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="SpousePunch" ApiKey="SpousePunch" Des="配偶月收入" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="WorkAddr" ApiKey="WorkAddr" Des="工作地详细地址" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="Salary" ApiKey="Salary" Des="月打卡工资" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="SubWork" ApiKey="SubWork" Des="有无副业" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="SubWorkContent" ApiKey="SubWorkContent" Des="副业内容" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="SubWorkSalary" ApiKey="SubWorkSalary" Des="副业月收入" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="CompanyName" ApiKey="CompanyName" Des="就职公司名称" ApiClass="req_ApplyInfo_Job"/>
+  <add AppKey="CompanyReserveMonth" ApiKey="CompanyReserveMonth" Des="公积金连续缴纳年限" ApiClass="req_ApplyInfo_Job"/>
+</ApplyInfoMap>
+

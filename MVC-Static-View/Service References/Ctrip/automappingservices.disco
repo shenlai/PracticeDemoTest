@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://124.127.242.67/automappingwebapi/automappingservices.asmx?wsdl" docRef="http://124.127.242.67/automappingwebapi/automappingservices.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://124.127.242.67/automappingwebapi/automappingservices.asmx" xmlns:q1="http://www.opentravel.org/OTA/2003/05" binding="q1:AutoMappingServicesSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://124.127.242.67/automappingwebapi/automappingservices.asmx" xmlns:q2="http://www.opentravel.org/OTA/2003/05" binding="q2:AutoMappingServicesSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

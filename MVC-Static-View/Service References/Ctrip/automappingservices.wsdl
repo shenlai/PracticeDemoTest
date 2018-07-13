@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.opentravel.org/OTA/2003/05" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.opentravel.org/OTA/2003/05">
+      <s:element name="GetCtripSubHotelInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="masterHotelId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCtripSubHotelInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CtripSubHotelInfoRS" type="tns:CtripSubHotelInfoRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CtripSubHotelInfoRS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="retCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HotelInfos" type="tns:ArrayOfHotelInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHotelInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HotelInfo" nillable="true" type="tns:HotelInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HotelInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="subHotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="masterHotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hotelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="provinceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hotelBelongto" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRoomProductInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subHotelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoomProductInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoomProductInfoRS" type="tns:ProductMappingInfoRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductMappingInfoRS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="retCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoomProductInfos" type="tns:ArrayOfRoomProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRoomProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RoomProductInfo" nillable="true" type="tns:RoomProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RoomProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="subHotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="masterRoomId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subRoomId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="breakfast" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="balanceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subRoomName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pmsRoomTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pmsRoomName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pmsHotelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pmsRatePlanCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetMappingRQ" type="tns:SetMappingRQ" />
+      <s:complexType name="SetMappingRQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="hotelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="roomTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ratePlanCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subHotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="masterHotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subRoomId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="setType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetMappingRS" type="tns:SetMappingRS" />
+      <s:complexType name="SetMappingRS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="retCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IntelligentMappingRQ" type="tns:RoomMatchRQ" />
+      <s:complexType name="RoomMatchRQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="roomTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="roomTypeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ratePlanName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="otaProductList" type="tns:ArrayOfOtaProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOtaProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="otaProductInfo" nillable="true" type="tns:otaProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="otaProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ota_RoomId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ota_RoomName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IntelligentMappingRS" type="tns:RoomMatchRS" />
+      <s:complexType name="RoomMatchRS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="retCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="matchResults" type="tns:ArrayOfMatch" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMatch">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Match" nillable="true" type="tns:Match" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Match">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="otaRoomId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="score" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MappingStatusSearchRQ" type="tns:MappingStatusSearchRQ" />
+      <s:complexType name="MappingStatusSearchRQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="hotelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subHotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="searchProductInfos" type="tns:ArrayOfSearchProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSearchProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SearchProductInfo" nillable="true" type="tns:SearchProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="roomTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ratePlanCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="productSearchResult">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:SearchProductInfo">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="subRoomId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="resultCode" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="resultMsg" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MappingStatusSearchRS" type="tns:MappingStatusSearchRS" />
+      <s:complexType name="MappingStatusSearchRS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="retCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:ArrayOfData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="data" nillable="true" type="tns:data" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="data">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="hotelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="masterHotelId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subHotelId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="hotelStatus" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="reMark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="productSearchResults" type="tns:ArrayOfProductSearchResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProductSearchResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="productSearchResult" nillable="true" type="tns:productSearchResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCtripSubHotelInfoByEBK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CtripSubHotelInfoByEBKRQ" type="tns:CtripSubHotelInfoByEBKRQ" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CtripSubHotelInfoByEBKRQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCtripSubHotelInfoByEBKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CtripSubHotelInfoByEBKRS" type="tns:CtripSubHotelInfoByEBKRS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CtripSubHotelInfoByEBKRS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="retCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="hotelProperty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HotelInfos" type="tns:ArrayOfHotelInfo" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCtripSubHotelInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCtripSubHotelInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCtripSubHotelInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCtripSubHotelInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoomProductInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoomProductInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRoomProductInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoomProductInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMappingInfoSoapIn">
+    <wsdl:part name="SetMappingRQ" element="tns:SetMappingRQ" />
+  </wsdl:message>
+  <wsdl:message name="SetMappingInfoSoapOut">
+    <wsdl:part name="SetMappingInfoResult" element="tns:SetMappingRS" />
+  </wsdl:message>
+  <wsdl:message name="IntelligentMappingSoapIn">
+    <wsdl:part name="RoomMatchRQ" element="tns:IntelligentMappingRQ" />
+  </wsdl:message>
+  <wsdl:message name="IntelligentMappingSoapOut">
+    <wsdl:part name="IntelligentMappingResult" element="tns:IntelligentMappingRS" />
+  </wsdl:message>
+  <wsdl:message name="MappingStatusSearchSoapIn">
+    <wsdl:part name="MappingStatusSearchRQ" element="tns:MappingStatusSearchRQ" />
+  </wsdl:message>
+  <wsdl:message name="MappingStatusSearchSoapOut">
+    <wsdl:part name="MappingStatusSearchResult" element="tns:MappingStatusSearchRS" />
+  </wsdl:message>
+  <wsdl:message name="GetCtripSubHotelInfoByEBKSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCtripSubHotelInfoByEBK" />
+  </wsdl:message>
+  <wsdl:message name="GetCtripSubHotelInfoByEBKSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCtripSubHotelInfoByEBKResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutoMappingServicesSoap">
+    <wsdl:operation name="GetCtripSubHotelInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取携程子酒店信息</wsdl:documentation>
+      <wsdl:input message="tns:GetCtripSubHotelInfoSoapIn" />
+      <wsdl:output message="tns:GetCtripSubHotelInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomProductInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取产品信息</wsdl:documentation>
+      <wsdl:input message="tns:GetRoomProductInfoSoapIn" />
+      <wsdl:output message="tns:GetRoomProductInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMappingInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">设置匹配</wsdl:documentation>
+      <wsdl:input message="tns:SetMappingInfoSoapIn" />
+      <wsdl:output message="tns:SetMappingInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntelligentMapping">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">产品智能匹配</wsdl:documentation>
+      <wsdl:input message="tns:IntelligentMappingSoapIn" />
+      <wsdl:output message="tns:IntelligentMappingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MappingStatusSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">酒店产品结果查询</wsdl:documentation>
+      <wsdl:input message="tns:MappingStatusSearchSoapIn" />
+      <wsdl:output message="tns:MappingStatusSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCtripSubHotelInfoByEBK">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">通过EBK账号获取携程子酒店信息</wsdl:documentation>
+      <wsdl:input message="tns:GetCtripSubHotelInfoByEBKSoapIn" />
+      <wsdl:output message="tns:GetCtripSubHotelInfoByEBKSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutoMappingServicesSoap" type="tns:AutoMappingServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCtripSubHotelInfo">
+      <soap:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#GetCtripSubHotelInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomProductInfo">
+      <soap:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#GetRoomProductInfoRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMappingInfo">
+      <soap:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#SetMappingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntelligentMapping">
+      <soap:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#IntelligentMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MappingStatusSearch">
+      <soap:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#MappingStatusSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCtripSubHotelInfoByEBK">
+      <soap:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#GetCtripSubHotelInfoByEBK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutoMappingServicesSoap12" type="tns:AutoMappingServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCtripSubHotelInfo">
+      <soap12:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#GetCtripSubHotelInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomProductInfo">
+      <soap12:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#GetRoomProductInfoRS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMappingInfo">
+      <soap12:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#SetMappingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntelligentMapping">
+      <soap12:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#IntelligentMapping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MappingStatusSearch">
+      <soap12:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#MappingStatusSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCtripSubHotelInfoByEBK">
+      <soap12:operation soapAction="http://htng.org/2014B/HTNG_ARIAndReservationPushService#GetCtripSubHotelInfoByEBK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutoMappingServices">
+    <wsdl:port name="AutoMappingServicesSoap" binding="tns:AutoMappingServicesSoap">
+      <soap:address location="http://124.127.242.67/automappingwebapi/automappingservices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutoMappingServicesSoap12" binding="tns:AutoMappingServicesSoap12">
+      <soap12:address location="http://124.127.242.67/automappingwebapi/automappingservices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

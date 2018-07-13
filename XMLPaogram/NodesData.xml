@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppSetting>
+  <App>
+    <AppName>RZT_Android</AppName>
+    <Version>1.1.1</Version>
+    <Url>AndroidUrl</Url>
+    <Isforce>true</Isforce>
+   
+  </App>
+  <App>
+    <AppName>RZT_IOS</AppName>
+    <Version>value</Version>
+    <Url>value</Url>
+    <Isforce>false</Isforce>
+    
+  </App>
+  <App>
+    <AppName>RZT_IOS2.0</AppName>
+    <Version>2.0</Version>
+    <Url>www</Url>
+    <Isforce>true</Isforce>
+    
+  </App>
+</AppSetting>
